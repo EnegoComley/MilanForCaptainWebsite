@@ -5,6 +5,7 @@ export default defineConfig({
   base: "./",
   server: {
     port: 3000,
-    strictPort: true
+    strictPort: true,
+    allowedHosts: ["milanforcaptain.enego.co.uk"]
   }
 });
