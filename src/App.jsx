@@ -11,7 +11,9 @@ const footerLinks = [
   { label: "Privacy Policy", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
   { label: "About The Campaign", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
   { label: "Terms of Use", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
-  { label: "Contact", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" }
+  { label: "Contact Us", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
+  { label: "Offer a Bribe", url: "mailto:milan.erdos@durham.ac.uk" }
+    
 ];
 
 const navLinks = [
