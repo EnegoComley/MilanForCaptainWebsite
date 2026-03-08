@@ -1,0 +1,89 @@
+import { campaignSections } from "./data/sectionPoints";
+
+function withJpegFallback(src) {
+  if (src.endsWith(".jpg")) {
+    return [src, src.replace(/\.jpg$/i, ".jpeg")];
+  }
+
+  if (src.endsWith(".jpeg")) {
+    return [src, src.replace(/\.jpeg$/i, ".jpg")];
+  }
+
+  return [src];
+}
+
+function ResilientImage({ className, src, alt }) {
+  const candidates = withJpegFallback(src);
+
+  const handleError = (event) => {
+    const currentIndex = Number(event.currentTarget.dataset.idx || 0);
+    const nextIndex = currentIndex + 1;
+
+    if (nextIndex < candidates.length) {
+      event.currentTarget.dataset.idx = String(nextIndex);
+      event.currentTarget.src = candidates[nextIndex];
+    }
+  };
+
+  return <img className={className} src={candidates[0]} alt={alt} onError={handleError} data-idx="0" />;
+}
+
+function SeparatorImage({ src, alt }) {
+  return (
+    <div className="separator-wrap" aria-hidden="true">
+      <ResilientImage className="separator-image" src={src} alt={alt} />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div className="page-shell">
+      <header className="hero section-card">
+        <p className="eyebrow">Durham University Canoe Club</p>
+        <h1>Milan for Captain</h1>
+        <p className="tagline">A serious candidate for serious times.</p>
+      </header>
+
+      <section className="bio section-card" id="bio">
+        <div className="bio-image-wrap">
+          <ResilientImage
+            className="bio-image"
+            src="/images/pfp.jpg"
+            alt="Milan campaign portrait"
+          />
+        </div>
+        <div className="bio-copy">
+          <h2>Bio</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.
+          </p>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </section>
+
+      {campaignSections.map((section) => (
+        <div key={section.id}>
+          <SeparatorImage src={section.image} alt={`${section.title} visual`} />
+          <section className="section-card content-section" id={section.id}>
+            <h2>{section.title}</h2>
+            <ul>
+              {section.points.map((point, index) => (
+                <li key={`${section.id}-${index}`}>{point}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
