@@ -123,7 +123,7 @@ function App() {
             />
           </div>
           <div className="bio-copy">
-            <h2>Bio</h2>
+            <h2>About Me</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -137,8 +137,8 @@ function App() {
             </p>
             <p>
               First Proposer: Enego Comley <br/>
-              Second Proposer: TBC <br/>
-              Third Proposer: TBC
+              Second Proposer: Charlotte Chow <br/>
+              Third Proposer: Bio Smitasiri
             </p>
           </div>
         </section>

@@ -17,7 +17,7 @@ export const campaignSections = [
     title: "My Experience",
     image: "/images/image2.jpg",
     points: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Led 3 weekly sessions since 2023 (unfortunately due to animosity in the current exec these sessions were not publicly advertised)",
       "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
       "Curabitur pretium tincidunt lacus, nulla gravida orci a odio.",
       "Integer in mauris eu nibh euismod gravida vitae sed neque."
