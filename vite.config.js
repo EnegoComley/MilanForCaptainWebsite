@@ -6,6 +6,15 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
-    allowedHosts: ["milanforcaptain.enego.co.uk"]
+    allowedHosts: ["milanforcaptain.enego.co.uk"],
+    // Prevent stale assets during development.
+    headers: {
+      "Cache-Control": "no-store"
+    },
+    // More reliable file-change detection across networked filesystems/proxies.
+    watch: {
+      usePolling: true,
+      interval: 150
+    }
   }
 });
