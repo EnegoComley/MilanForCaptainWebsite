@@ -125,20 +125,16 @@ function App() {
           <div className="bio-copy">
             <h2>About Me</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
+              Hi! I am a Castle Physics and Astronomy student running for Durham University Canoe Club Captain (DUCCC).
             </p>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. For a while I have thought about whether to seek employment as a Venezuelan government official or as the CEO of Fifa.
             </p>
             <p>
               First Proposer: Enego Comley <br/>
               Second Proposer: Charlotte Chow <br/>
-              Third Proposer: Bio Smitasiri
+              Third Proposer: Bio Smitasiri <br/>
+              Fourth Proposer: Noah Coombe
             </p>
           </div>
         </section>
