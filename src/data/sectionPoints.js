@@ -4,12 +4,18 @@ export const campaignSections = [
     title: "My Policies",
     image: "/images/image1.jpg",
     points: [
-      "DUXIT: For too long Team Durham have charged an extortionately high membership cost. I will lower this by leaving Team durham.",
+      "DUXIT: For too long Team Durham have charged an extortionately high membership cost. I will lower this by leaving Team Durham.",
       "Make The River Ours Again: For too long, durham has suffered from a migrant rower problem forcing us Kayakers to give way to rower right. This ends now.",
-      "Build an Erg powered elevator on cardiac hill to make training mean something",
-      "Reduce the membership to £0 by taking out high interest loans",
+      "Build an erg-powered elevator on cardiac hill to make training mean something",
+      "Reduce the membership to £0 by leveraging BUCS-guaranteed limited SPVs to issue high-interest fixed-term bonds whilst producing affirmative covenants",
       "Replace cars with students from the humanities and social sciences, they have enough free time anyway.",
-      "Create a club supply of hyaluronic acid for all who need it."
+      "Create a club supply of hyaluronic acid for all who need it.",
+      "Set and maintain a new 90% corruption target.",
+      "Outlaw the use of spherical Bessel functions.",
+      "Ensure capital adequacy of the club on a low dependency funding basis.",
+      "Send a charity-sponsored kayak mission to the Strait of Hormuz to gather oil for the Alps trip.",
+      "Make sure that the club has sufficient capital (principally kayaks and F-14 tomcats) to place itself onto a non-sustainable financial footing.",
+      "Lead zero-gravity rolling sessions for beginners."
     ]
   },
   {
