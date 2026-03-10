@@ -6,51 +6,69 @@
     points: [
       {
         title: "DUXIT",
+        icon: "⚖",
         text: "For too long Team Durham have charged an extortionately high membership cost. I will lower this by leaving Team Durham."
       },
       {
         title: "Make The River Ours Again",
+        icon: "🌊",
         text: "Durham is suffering from a disease, the migrant rower problem is forcing us Kayakers to give way to river right. This ends now."
       },
       {
         title: "Cardiac Hill Elevator",
+        icon: "🛗",
         text: "Build an erg-powered elevator on Cardiac Hill to make training mean something."
       },
       {
         title: "Reduce Membership Cost",
+        icon: "£",
         text: "Reduce the membership to GBP0 by leveraging BUCS-guaranteed limited SPVs to issue high-interest fixed-term bonds whilst producing affirmative covenants."
       },
       {
         title: "Alternative Transport Plan",
+        icon: "🚗",
         text: "Replace cars with students from the humanities and social sciences, they have enough free time anyway."
       },
       {
         title: "Club Hyaluronic Supply",
+        icon: "🧴",
         text: "Create a club supply of hyaluronic acid for all who need it."
       },
       {
         title: "Corruption Performance Target",
+        icon: "🎯",
         text: "Set and maintain a new 90% corruption target."
       },
       {
         title: "Ban Bessel Functions",
+        icon: "∅",
         text: "Outlaw the use of spherical Bessel functions."
       },
       {
         title: "Capital Adequacy Framework",
+        icon: "🏦",
         text: "Ensure capital adequacy of the club on a low dependency funding basis."
       },
       {
         title: "Hormuz Oil Mission",
+        icon: "⛽",
         text: "Send a charity-sponsored kayak mission to the Strait of Hormuz to gather oil for the Alps trip."
       },
       {
         title: "Kayaks And Tomcats",
+        icon: "✈",
         text: "Make sure that the club has sufficient capital (principally kayaks and F-14 tomcats) to place itself onto a non-sustainable financial footing."
       },
       {
         title: "Zero-Gravity Roll Sessions",
+        icon: "🛰",
         text: "Lead zero-gravity rolling sessions for beginners."
+      },
+      ,
+      {
+        title: "Bread",
+        icon: "🍞",
+        text: "Make bread the official fruit of DUCC"
       }
     ]
   },

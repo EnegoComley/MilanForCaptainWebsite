@@ -862,3 +862,455 @@ body.dark-theme .sidebar-nav a.active {
     font-size: 0.8rem;
   }
 }
+
+.big-screem-toggle {
+  margin-top: 0.7rem;
+  width: 100%;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--brand-strong);
+  border-radius: 10px;
+  padding: 0.58rem 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.big-screem-view {
+  min-height: 100vh;
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(67, 134, 230, 0.22) 0%, transparent 40%),
+    linear-gradient(165deg, var(--bg) 0%, var(--bg-soft) 60%, #f5f9ff 100%);
+  color: var(--ink);
+}
+
+.big-screem-header {
+  border: 1px solid var(--card-edge);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 0.8rem 1rem;
+}
+
+.big-screem-header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+}
+
+.big-screem-header p {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+}
+
+.big-screem-exit-note {
+  font-size: 0.8rem;
+}
+
+.big-screem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.big-screem-panel {
+  border: 1px solid var(--card-edge);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 0.75rem 0.85rem;
+}
+
+.big-screem-panel h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.big-screem-panel p,
+.big-screem-panel li {
+  margin: 0 0 0.35rem;
+  font-size: 0.83rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.big-screem-panel ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.big-screem-bio-image {
+  width: 100%;
+  max-height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .big-screem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Big screem mode visual refresh */
+.big-screem-view {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0.9rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.7rem;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(67, 134, 230, 0.2) 0%, transparent 42%),
+    linear-gradient(165deg, var(--bg) 0%, var(--bg-soft) 62%, #f5f9ff 100%);
+}
+
+.big-screem-header {
+  border: 1px solid var(--card-edge);
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.95) 0%, rgba(235, 246, 255, 0.88) 100%);
+  padding: 0.72rem 0.95rem;
+}
+
+body.dark-theme .big-screem-header {
+  background: linear-gradient(140deg, rgba(20, 41, 66, 0.94) 0%, rgba(18, 36, 58, 0.9) 100%);
+}
+
+.big-screem-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--brand-strong);
+}
+
+.big-screem-header h1 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  line-height: 1.02;
+}
+
+.big-screem-tagline {
+  margin: 0.18rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.big-screem-exit-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  opacity: 0.9;
+}
+
+.big-screem-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.big-screem-panel {
+  min-height: 0;
+  border: 1px solid var(--card-edge);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 0.68rem 0.78rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.45rem;
+}
+
+.big-screem-panel:first-child {
+  grid-row: span 2;
+}
+
+.big-screem-panel h2 {
+  margin: 0;
+  font-size: 1.03rem;
+  color: var(--brand-strong);
+}
+
+.big-screem-panel-body {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+.big-screem-panel p,
+.big-screem-panel li {
+  margin: 0 0 0.34rem;
+  font-size: 0.8rem;
+  line-height: 1.33;
+  color: var(--ink-soft);
+}
+
+.big-screem-panel ul {
+  margin: 0;
+  padding-left: 0.95rem;
+}
+
+.big-screem-bio-image {
+  width: 100%;
+  max-height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.28rem;
+}
+
+@media (max-width: 1150px) {
+  .big-screem-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .big-screem-panel:first-child {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .big-screem-view {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .big-screem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-screem-panel-body {
+    overflow: visible;
+    padding-right: 0;
+  }
+}
+
+/* Big screem mode layout fix: full, balanced tiles + uncropped about image */
+.big-screem-view {
+  height: 100vh;
+  overflow: hidden;
+  grid-template-rows: auto 1fr;
+}
+
+.big-screem-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.big-screem-panel,
+.big-screem-panel:first-child {
+  min-height: 0;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+.big-screem-panel-body {
+  min-height: 0;
+  overflow: auto;
+}
+
+.big-screem-bio-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: var(--card-alt);
+  border: 1px solid var(--card-edge);
+  border-radius: 10px;
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .big-screem-view {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .big-screem-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .big-screem-panel-body {
+    overflow: visible;
+  }
+}
+
+/* Big screem readability + fill tuning */
+.big-screem-view {
+  font-size: clamp(0.95rem, 0.45vw + 0.55rem, 1.2rem);
+}
+
+.big-screem-header h1 {
+  font-size: clamp(1.7rem, 1.3vw + 1rem, 2.7rem);
+}
+
+.big-screem-tagline {
+  font-size: clamp(0.92rem, 0.5vw + 0.6rem, 1.15rem);
+}
+
+.big-screem-panel h2 {
+  font-size: clamp(1rem, 0.7vw + 0.55rem, 1.4rem);
+}
+
+.big-screem-panel p,
+.big-screem-panel li {
+  font-size: clamp(0.88rem, 0.45vw + 0.52rem, 1.08rem);
+  line-height: 1.42;
+}
+
+.big-screem-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.big-screem-panel {
+  min-height: 0;
+}
+
+.big-screem-panel-body {
+  min-height: 0;
+  overflow: auto;
+}
+
+.about-panel .big-screem-bio-image {
+  float: right;
+  width: clamp(150px, 38%, 280px);
+  height: auto;
+  object-fit: contain;
+  margin: 0.12rem 0 0.52rem 0.72rem;
+  border: 1px solid var(--card-edge);
+  background: var(--card-alt);
+}
+
+.about-panel .big-screem-panel-body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 900px) {
+  .about-panel .big-screem-bio-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 0.5rem;
+  }
+}
+
+/* Big screem ratio + image scale tuning */
+.big-screem-grid {
+  grid-template-columns: 1.18fr 1fr;
+  grid-template-rows: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.big-screem-panel.about-panel {
+  grid-row: 1 / span 2;
+}
+
+.about-panel .big-screem-bio-image {
+  width: clamp(220px, 48%, 380px);
+  max-height: none;
+}
+
+@media (max-width: 1200px) {
+  .big-screem-grid {
+    grid-template-columns: 1.08fr 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .about-panel .big-screem-bio-image {
+    width: clamp(200px, 45%, 340px);
+  }
+}
+
+@media (max-width: 900px) {
+  .big-screem-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .big-screem-panel.about-panel {
+    grid-row: auto;
+  }
+
+  .about-panel .big-screem-bio-image {
+    width: 100%;
+  }
+}
+
+/* Big screem mode final layout fixes */
+.big-screem-view {
+  height: 100vh;
+  overflow: auto;
+}
+
+.big-screem-grid {
+  display: block;
+  column-count: 2;
+  column-gap: 0.7rem;
+}
+
+.big-screem-panel {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 0.7rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.big-screem-panel.about-panel {
+  grid-row: auto;
+}
+
+.about-panel .big-screem-bio-image {
+  width: clamp(230px, 58%, 420px);
+}
+
+@media (max-width: 900px) {
+  .big-screem-toggle {
+    display: none;
+  }
+
+  .big-screem-grid {
+    column-count: 1;
+  }
+}
+
+/* About card adaptive text width: maximize image area while preserving readable text */
+.about-panel .big-screem-panel-body {
+  overflow: visible;
+}
+
+.about-panel .big-screem-bio-image {
+  float: right;
+  width: min(70%, 520px);
+  min-width: 250px;
+  height: auto;
+  object-fit: contain;
+  margin: 0.1rem 0 0.55rem 0.75rem;
+}
+
+.about-panel .big-screem-panel-body p {
+  max-width: none;
+}
+
+@media (max-width: 1200px) {
+  .about-panel .big-screem-bio-image {
+    width: min(65%, 460px);
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-panel .big-screem-bio-image {
+    float: none;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 0.55rem;
+  }
+}
