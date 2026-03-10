@@ -2,10 +2,24 @@
 import { campaignSections } from "./data/sectionPoints";
 
 const testimonialLinks = [
-  { label: "Coach Endorsement", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { label: "Club Committee Review", url: "https://www.youtube.com/watch?v=sTJ7AzBIJoI" },
-  { label: "Team Member Statement", url: "https://www.youtube.com/watch?v=astISOttCQ0" }
+  {
+    label: "Coach Endorsement",
+    subtitle: "From senior coaching staff",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    label: "Club Committee Review",
+    subtitle: "From current committee members",
+    url: "https://www.youtube.com/watch?v=sTJ7AzBIJoI"
+  },
+  {
+    label: "Team Member Statement",
+    subtitle: "From competitive paddlers",
+    url: "https://www.youtube.com/watch?v=astISOttCQ0"
+  }
 ];
+
+const policyIcons = ["⚖", "🌊", "🛗", "£", "🚗", "🧴", "🎯", "∅", "🏦", "⛽", "✈", "🛰"];
 
 const footerLinks = [
   { label: "Privacy Policy", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
@@ -18,6 +32,13 @@ const footerLinks = [
 const socialLinks = [
   { label: "Instagram", url: "https://www.instagram.com/" },
   { label: "YouTube", url: "https://www.youtube.com/" }
+];
+
+const quickJumpItems = [
+  { id: "policies", label: "Policies" },
+  { id: "experience", label: "Experience" },
+  { id: "why-vote", label: "Why Vote" },
+  { id: "testimonials", label: "Testimonials" }
 ];
 
 function withJpegFallback(src) {
@@ -71,9 +92,22 @@ function SeparatorImage({ src, alt }) {
   );
 }
 
+function SectionJumpChips() {
+  return (
+    <div className="section-jumps" aria-label="Quick links">
+      {quickJumpItems.map((item) => (
+        <a key={item.id} href={`#${item.id}`}>{item.label}</a>
+      ))}
+    </div>
+  );
+}
+
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const navLinks = useMemo(
     () => [
@@ -84,6 +118,18 @@ function App() {
     ],
     []
   );
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const shouldUseDark = saved ? saved === "dark" : prefersDark;
+    setIsDarkMode(shouldUseDark);
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
 
   useEffect(() => {
     const ids = navLinks.map((item) => item.id);
@@ -111,6 +157,19 @@ function App() {
   }, [navLinks]);
 
   useEffect(() => {
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable <= 0 ? 0 : Math.min(100, (window.scrollY / scrollable) * 100);
+      setScrollProgress(progress);
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateProgress);
+  }, []);
+
+  useEffect(() => {
     const revealNodes = document.querySelectorAll(".reveal");
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -129,22 +188,50 @@ function App() {
     return () => revealObserver.disconnect();
   }, []);
 
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("milan.erdos@durham.ac.uk");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   return (
     <>
-      <button
-        className="nav-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded={isSidebarOpen}
-        onClick={() => setIsSidebarOpen((prev) => !prev)}
-      >
-        <span className="nav-toggle-icon" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </span>
-        <span className="nav-toggle-label">Menu</span>
-      </button>
+      <div className="top-controls">
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded={isSidebarOpen}
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+        >
+          <span className="nav-toggle-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="nav-toggle-label">Menu</span>
+        </button>
+
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          onClick={() => setIsDarkMode((prev) => !prev)}
+        >
+          {isDarkMode ? "Light" : "Dark"}
+        </button>
+
+        <div className="scroll-progress" aria-label="Page progress">
+          <div className="scroll-progress-track">
+            <div className="scroll-progress-fill" style={{ width: `${scrollProgress}%` }} />
+          </div>
+          <span>{Math.round(scrollProgress)}%</span>
+        </div>
+      </div>
 
       <aside className={`sidebar ${isSidebarOpen ? "open" : ""}`} aria-label="Section navigation">
         <div className="sidebar-header">
@@ -180,7 +267,7 @@ function App() {
         onClick={() => setIsSidebarOpen(false)}
       />
 
-      <a className="sticky-vote" href="#testimonials">Vote Milan</a>
+      <a className="sticky-vote" href="https://www.instagram.com/p/DVI5sLYCC7Q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Vote Milan</a>
 
       <div className="page-shell" id="top">
         <header className="hero section-card reveal">
@@ -191,7 +278,7 @@ function App() {
               <h1>Milan for Captain</h1>
               <p className="tagline">A serious candidate for serious times.</p>
               <p className="hero-supporting">
-                Focused leadership, clear direction, and a practical plan to strengthen DUCCC on and off the water.
+                Focused leadership, clear direction, and a practical plan to strengthen DUCC on and off the water.
               </p>
               <div className="hero-actions">
                 <a className="hero-action" href="#policies">Read Policies</a>
@@ -216,10 +303,7 @@ function App() {
               </div>
             </div>
           </div>
-        </header>
-
-        <section className="bio section-card reveal" id="bio">
-          <div className="bio-image-wrap">
+        </header>        <section className="bio section-card reveal" id="bio">          <div className="bio-image-wrap">
             <ResilientImage
               className="bio-image"
               src="/images/pfp.jpg"
@@ -250,13 +334,21 @@ function App() {
               className={`section-card content-section reveal ${sectionIndex % 2 === 1 ? "content-section-alt" : ""}`}
               id={section.id}
             >
-              <h2>{section.title}</h2>
+              <SectionJumpChips />
+              <div className="section-header-row">
+                <h2>{section.title}</h2>
+                              </div>
               <div className="points-grid">
                 {section.points.map((point, index) => {
                   const parsed = splitPoint(point, section.id);
+                  const icon = section.id === "policies" ? (policyIcons[index] ?? "•") : null;
+
                   return (
                     <article key={`${section.id}-${index}`} className="point-card">
-                      <p className="point-index">{String(index + 1).padStart(2, "0")}</p>
+                      <div className="point-top-row">
+                        <p className="point-index">{String(index + 1).padStart(2, "0")}</p>
+                        {icon ? <span className="policy-icon" aria-hidden="true">{icon}</span> : null}
+                      </div>
                       {parsed.heading ? <h3>{parsed.heading}</h3> : null}
                       <p>{parsed.body}</p>
                     </article>
@@ -268,22 +360,25 @@ function App() {
         ))}
 
         <section className="section-card testimonials reveal" id="testimonials">
+          <SectionJumpChips />
           <h2>Testimonials</h2>
           <div className="testimonial-buttons">
             {testimonialLinks.map((item) => (
               <a key={item.label} className="testimonial-button" href={item.url} target="_blank" rel="noreferrer">
-                {item.label}
+                <span className="testimonial-label">{item.label}</span>
+                <span className="testimonial-subtitle">{item.subtitle}</span>
               </a>
             ))}
           </div>
         </section>
       </div>
 
-      <footer className="site-footer">
+      <footer className="site-footer" id="footer">
         <div className="footer-inner">
           <div className="footer-brand">
             <p className="footer-copy">Milan For Captain Campaign</p>
             <p className="footer-subcopy">Durham University Canoe Club • 2026 Campaign</p>
+            <p className="footer-subcopy">© 2026 Milan For Captain. All rights reserved.</p>
           </div>
           <div className="footer-right">
             <nav className="footer-social" aria-label="Social links">
@@ -295,6 +390,7 @@ function App() {
               {footerLinks.map((link) => (
                 <a key={link.label} href={link.url}>{link.label}</a>
               ))}
+              <a href="#top">Back To Top</a>
             </nav>
           </div>
         </div>
@@ -304,3 +400,4 @@ function App() {
 }
 
 export default App;
+

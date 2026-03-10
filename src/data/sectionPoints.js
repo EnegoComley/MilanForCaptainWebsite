@@ -71,7 +71,7 @@
     image: "/images/image3.jpg",
     points: [
       "Of the other candidates I am the only clear choice.",
-      "I'm the first candidate in DUCC history to gain the support of 3 proposers rather than the normal 2.",
+      "I'm the first candidate in DUCC history to gain the support of 4 proposers rather than the normal 2.",
       "Tactical Voting: As the current leader in the polls I am the clear choice to vote for it you are worried about any other candidates getting the position.",
       "Able to build a more competent website than the official canoe club website.",
       "In Greek mythology, Cassandra was a Trojan princess cursed by Apollo to always speak true prophecies that no one would believe. Her name has become a common term for someone whose accurate warnings or predictions are consistently dismissed or ignored.",
