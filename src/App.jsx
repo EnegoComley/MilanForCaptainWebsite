@@ -330,7 +330,7 @@ function App() {
                 </div>
               </div>
               <div className="hero-media">
-                <ResilientImage className="hero-portrait" src="/images/pfp.jpg" alt="Milan campaign portrait" />
+                <ResilientImage className="hero-portrait" src="/images/Miladuro.jpeg" alt="Milan campaign portrait" />
                 <div className="hero-stats">
                   <article>
                     <p className="hero-stat-value">4</p>
