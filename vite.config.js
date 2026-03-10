@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
-    allowedHosts: ["milanforcaptain.enego.co.uk"],
+    allowedHosts: ["milanforcaptain.uk"],
     // Prevent stale assets during development.
     headers: {
       "Cache-Control": "no-store"
