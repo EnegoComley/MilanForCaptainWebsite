@@ -75,11 +75,12 @@
   {
     id: "experience",
     title: "My Experience",
-    image: "/images/image2.jpg",
+    image: "/images/image2.jpeg",
     points: [
       "Led 3 weekly sessions since 2023 (unfortunately due to animosity in the current exec these sessions were not publicly advertised)",
       "Completed a 5K time trial in 3 hours last week, setting a new record for the club.",
-      "Curabitur pretium tincidunt lacus, nulla gravida orci a odio.",
+      "Hosted a durham leadership conference on effective wealth management. (See photo above)",
+      "Became the first UK under 65 to successfully kayak a grade 7.",
       "Integer in mauris eu nibh euismod gravida vitae sed neque."
     ]
   },
@@ -91,7 +92,6 @@
       "Of the other candidates I am the only clear choice.",
       "I'm the first candidate in DUCC history to gain the support of 4 proposers rather than the normal 2.",
       "Tactical Voting: As the current leader in the polls I am the clear choice to vote for it you are worried about any other candidates getting the position.",
-      "Able to build a more competent website than the official canoe club website.",
       "In Greek mythology, Cassandra was a Trojan princess cursed by Apollo to always speak true prophecies that no one would believe. Her name has become a common term for someone whose accurate warnings or predictions are consistently dismissed or ignored.",
       "Only candidate to have run for canoe club President and won 3 times in a row.",
       "Aenean ultricies mi vitae est mauris placerat eleifend leo."
