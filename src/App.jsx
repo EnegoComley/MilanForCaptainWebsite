@@ -13,7 +13,6 @@ const footerLinks = [
   { label: "Terms of Use", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
   { label: "Contact Us", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
   { label: "Offer a Bribe", url: "mailto:milan.erdos@durham.ac.uk" }
-    
 ];
 
 const navLinks = [
@@ -109,9 +108,17 @@ function App() {
 
       <div className="page-shell" id="top">
         <header className="hero section-card">
-          <p className="eyebrow">Durham University Canoe Club</p>
+          <p className="hero-badge">Durham University Canoe Club Captaincy</p>
+          <p className="eyebrow">2026 Candidate</p>
           <h1>Milan for Captain</h1>
           <p className="tagline">A serious candidate for serious times.</p>
+          <p className="hero-supporting">
+            Focused leadership, clear direction, and a practical plan to strengthen DUCCC on and off the water.
+          </p>
+          <div className="hero-actions">
+            <a className="hero-action" href="#policies">Read Policies</a>
+            <a className="hero-action secondary" href="#experience">View Experience</a>
+          </div>
         </header>
 
         <section className="bio section-card" id="bio">
