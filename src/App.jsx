@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import { campaignSections } from "./data/sectionPoints";
 
 const testimonialLinks = [
@@ -15,10 +15,9 @@ const footerLinks = [
   { label: "Offer a Bribe", url: "mailto:milan.erdos@durham.ac.uk" }
 ];
 
-const navLinks = [
-  { id: "bio", label: "Bio" },
-  ...campaignSections.map((section) => ({ id: section.id, label: section.title })),
-  { id: "testimonials", label: "Testimonials" }
+const socialLinks = [
+  { label: "Instagram", url: "https://www.instagram.com/" },
+  { label: "YouTube", url: "https://www.youtube.com/" }
 ];
 
 function withJpegFallback(src) {
@@ -31,6 +30,21 @@ function withJpegFallback(src) {
   }
 
   return [src];
+}
+
+function splitPoint(point, sectionId) {
+  if (typeof point === "object" && point !== null) {
+    const body = point.text ?? point.body ?? "";
+    return {
+      heading: sectionId === "policies" ? point.title ?? "" : "",
+      body
+    };
+  }
+
+  return {
+    heading: "",
+    body: String(point)
+  };
 }
 
 function ResilientImage({ className, src, alt }) {
@@ -51,7 +65,7 @@ function ResilientImage({ className, src, alt }) {
 
 function SeparatorImage({ src, alt }) {
   return (
-    <div className="separator-wrap" aria-hidden="true">
+    <div className="separator-wrap reveal" aria-hidden="true">
       <ResilientImage className="separator-image" src={src} alt={alt} />
     </div>
   );
@@ -59,6 +73,61 @@ function SeparatorImage({ src, alt }) {
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
+
+  const navLinks = useMemo(
+    () => [
+      { id: "top", label: "Home" },
+      { id: "bio", label: "Bio" },
+      ...campaignSections.map((section) => ({ id: section.id, label: section.title })),
+      { id: "testimonials", label: "Testimonials" }
+    ],
+    []
+  );
+
+  useEffect(() => {
+    const ids = navLinks.map((item) => item.id);
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((element) => element !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -55% 0px",
+        threshold: 0.05
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [navLinks]);
+
+  useEffect(() => {
+    const revealNodes = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    revealNodes.forEach((node) => revealObserver.observe(node));
+
+    return () => revealObserver.disconnect();
+  }, []);
 
   return (
     <>
@@ -92,7 +161,12 @@ function App() {
         </div>
         <nav className="sidebar-nav">
           {navLinks.map((link) => (
-            <a key={link.id} href={`#${link.id}`} onClick={() => setIsSidebarOpen(false)}>
+            <a
+              key={link.id}
+              className={activeSection === link.id ? "active" : ""}
+              href={`#${link.id}`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
               <span>{link.label}</span>
             </a>
           ))}
@@ -106,22 +180,45 @@ function App() {
         onClick={() => setIsSidebarOpen(false)}
       />
 
+      <a className="sticky-vote" href="#testimonials">Vote Milan</a>
+
       <div className="page-shell" id="top">
-        <header className="hero section-card">
-          <p className="hero-badge">Durham University Canoe Club Captaincy</p>
-          <p className="eyebrow">2026 Candidate</p>
-          <h1>Milan for Captain</h1>
-          <p className="tagline">A serious candidate for serious times.</p>
-          <p className="hero-supporting">
-            Focused leadership, clear direction, and a practical plan to strengthen DUCCC on and off the water.
-          </p>
-          <div className="hero-actions">
-            <a className="hero-action" href="#policies">Read Policies</a>
-            <a className="hero-action secondary" href="#experience">View Experience</a>
+        <header className="hero section-card reveal">
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <p className="hero-badge">Durham University Canoe Club Captaincy</p>
+              <p className="eyebrow">2026 Candidate</p>
+              <h1>Milan for Captain</h1>
+              <p className="tagline">A serious candidate for serious times.</p>
+              <p className="hero-supporting">
+                Focused leadership, clear direction, and a practical plan to strengthen DUCCC on and off the water.
+              </p>
+              <div className="hero-actions">
+                <a className="hero-action" href="#policies">Read Policies</a>
+                <a className="hero-action secondary" href="#experience">View Experience</a>
+              </div>
+            </div>
+            <div className="hero-media">
+              <ResilientImage className="hero-portrait" src="/images/pfp.jpg" alt="Milan campaign portrait" />
+              <div className="hero-stats">
+                <article>
+                  <p className="hero-stat-value">4</p>
+                  <p className="hero-stat-label">Proposers</p>
+                </article>
+                <article>
+                  <p className="hero-stat-value">3+</p>
+                  <p className="hero-stat-label">Years Paddling</p>
+                </article>
+                <article>
+                  <p className="hero-stat-value">1</p>
+                  <p className="hero-stat-label">Clear Choice</p>
+                </article>
+              </div>
+            </div>
           </div>
         </header>
 
-        <section className="bio section-card" id="bio">
+        <section className="bio section-card reveal" id="bio">
           <div className="bio-image-wrap">
             <ResilientImage
               className="bio-image"
@@ -146,21 +243,31 @@ function App() {
           </div>
         </section>
 
-        {campaignSections.map((section) => (
+        {campaignSections.map((section, sectionIndex) => (
           <div key={section.id}>
             <SeparatorImage src={section.image} alt={`${section.title} visual`} />
-            <section className="section-card content-section" id={section.id}>
+            <section
+              className={`section-card content-section reveal ${sectionIndex % 2 === 1 ? "content-section-alt" : ""}`}
+              id={section.id}
+            >
               <h2>{section.title}</h2>
-              <ul>
-                {section.points.map((point, index) => (
-                  <li key={`${section.id}-${index}`}>{point}</li>
-                ))}
-              </ul>
+              <div className="points-grid">
+                {section.points.map((point, index) => {
+                  const parsed = splitPoint(point, section.id);
+                  return (
+                    <article key={`${section.id}-${index}`} className="point-card">
+                      <p className="point-index">{String(index + 1).padStart(2, "0")}</p>
+                      {parsed.heading ? <h3>{parsed.heading}</h3> : null}
+                      <p>{parsed.body}</p>
+                    </article>
+                  );
+                })}
+              </div>
             </section>
           </div>
         ))}
 
-        <section className="section-card testimonials" id="testimonials">
+        <section className="section-card testimonials reveal" id="testimonials">
           <h2>Testimonials</h2>
           <div className="testimonial-buttons">
             {testimonialLinks.map((item) => (
@@ -174,12 +281,22 @@ function App() {
 
       <footer className="site-footer">
         <div className="footer-inner">
-          <p className="footer-copy">Milan For Captain Campaign</p>
-          <nav className="footer-links" aria-label="Footer links">
-            {footerLinks.map((link) => (
-              <a key={link.label} href={link.url}>{link.label}</a>
-            ))}
-          </nav>
+          <div className="footer-brand">
+            <p className="footer-copy">Milan For Captain Campaign</p>
+            <p className="footer-subcopy">Durham University Canoe Club • 2026 Campaign</p>
+          </div>
+          <div className="footer-right">
+            <nav className="footer-social" aria-label="Social links">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.url}>{link.label}</a>
+              ))}
+            </nav>
+            <nav className="footer-links" aria-label="Footer links">
+              {footerLinks.map((link) => (
+                <a key={link.label} href={link.url}>{link.label}</a>
+              ))}
+            </nav>
+          </div>
         </div>
       </footer>
     </>
