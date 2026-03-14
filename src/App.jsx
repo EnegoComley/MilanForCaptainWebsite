@@ -21,15 +21,15 @@ const testimonialLinks = [
 
 const footerLinks = [
   { label: "Privacy Policy", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
-  { label: "About The Campaign", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
+  { label: "About The Campaign", url: "https://www.youtube.com/watch?v=ELTtFZ56UJM" },
   { label: "Offer a Bribe", url: "mailto:milan.erdos@durham.ac.uk" },
-  { label: "Terms of Use", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" },
-  { label: "Contact Us", url: "https://www.youtube.com/watch?v=iV2ViNJFZC8" }
+  { label: "Terms of Use", url: "https://www.youtube.com/watch?v=Edso0YLSqfk" },
+  { label: "Contact Us", url: "https://www.youtube.com/watch?v=DwBagRLbGFU" }
 ];
 
 const socialLinks = [
-  { label: "Instagram", url: "https://www.instagram.com/" },
-  { label: "YouTube", url: "https://www.youtube.com/" }
+  { label: "Instagram", url: "https://www.instagram.com/reel/DTHENstDxOr" },
+  { label: "YouTube", url: "https://www.youtube.com/watch?v=6n3pFFPSlW4" }
 ];
 
 const quickJumpItems = [

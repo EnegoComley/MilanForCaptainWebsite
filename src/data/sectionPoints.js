@@ -92,9 +92,10 @@
     image: "/images/image3.jpg",
     points: [
       "I'm the first candidate in DUCC history to gain the support of 4 proposers rather than the normal 2, including an alumnus supporter.",
-      "Current polls put me in the lead just ahead of Nathaniel, with other candidates far behind. These other candidates cannot win; voting for them is a vote for Nathaniel as captain. Credible and well-known tactical voting sites say only a vote for me can stop Nathaniel.",
+      "Current polls put me in the lead just ahead of the pro-rower candidate, with other candidates far behind. These other candidates cannot win; voting for them is a vote for a rower as captain. Credible and well-known tactical voting sites say only a vote for me can stop the rowers.",
       "In Greek mythology, Cassandra was a Trojan princess cursed by Apollo to always speak true prophecies that no one would believe. Her name has become a common term for someone whose accurate warnings or predictions are consistently dismissed or ignored.",
       "I am the only candidate to have run for canoe club President and won 3 times in a row.",
+      "A színház olyan, mint a cigaretta, egy idő után függőséget okoz.",
       "Libertas. Integritas. Humilitas. Satis dictum"
     ]
   }
