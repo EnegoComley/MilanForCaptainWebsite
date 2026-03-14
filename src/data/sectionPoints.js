@@ -97,6 +97,5 @@
       "I am the only candidate to have run for canoe club President and won 3 times in a row.",
       "Libertas. Integritas. Humilitas. Satis dictum"
     ]
-    ]
   }
 ];
