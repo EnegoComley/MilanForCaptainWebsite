@@ -7,7 +7,7 @@
       {
         title: "DUXIT",
         icon: "⚖",
-        text: "For too long Team Durham have charged an extortionately high membership cost. I will lower this by leaving Team Durham."
+        text: "We send Team Durham £2 000 a week. Let's fund kayaks instead. We need to leave Team Durham."
       },
       {
         title: "Make The River Ours Again",
@@ -17,7 +17,7 @@
       {
         title: "Cardiac Hill Elevator",
         icon: "🛗",
-        text: "Build an erg-powered elevator on Cardiac Hill to make training mean something."
+        text: "Build an erg-powered elevator on Cardiac Hill: training should mean something."
       },
       {
         title: "Reduce Membership Cost",
@@ -27,7 +27,7 @@
       {
         title: "Alternative Transport Plan",
         icon: "🚗",
-        text: "Replace cars with students from the humanities and social sciences, they have enough free time anyway."
+        text: "Replace cars with students from the humanities and social sciences (excluding law); they have enough free time anyway."
       },
       {
         title: "Club Hyaluronic Supply",
@@ -42,7 +42,7 @@
       {
         title: "Ban Bessel Functions",
         icon: "∅",
-        text: "Outlaw the use of spherical Bessel functions."
+        text: "Outlaw the use of spherical Bessel functions - they have <a href=\"https://youtu.be/mm-4PltMB2A?si=ZhYhfMQJ7QvooJWw\">caused too much suffering</a>."
       },
       {
         title: "Capital Adequacy Framework",
@@ -57,7 +57,7 @@
       {
         title: "Kayaks And Tomcats",
         icon: "✈",
-        text: "Make sure that the club has sufficient capital (principally kayaks and F-14 tomcats) to place itself onto a non-sustainable financial footing."
+        text: "Make sure that the club has sufficient capital (principally kayaks and Grumman F-14 Tomcats) to place itself onto a non-sustainable financial footing."
       },
       {
         title: "Zero-Gravity Roll Sessions",
@@ -68,7 +68,7 @@
       {
         title: "Bread",
         icon: "🍞",
-        text: "Make bread the official fruit of DUCC"
+        text: "Make bread the official fruit of DUCC."
       }
     ]
   },
@@ -77,12 +77,13 @@
     title: "My Experience",
     image: "/images/image2.jpeg",
     points: [
-      "Led 3 weekly sessions since 2023 (unfortunately due to animosity in the current exec these sessions were not publicly advertised)",
+      "Hosted a Durham leadership conference on effective non-Abelian wealth management (see above photo).",
+      "Led 3 weekly sessions since 2023 (unfortunately, due to the animosity of the current exec, these sessions were not publicly advertised).",
       "Completed a 5K time trial in 3 hours last week, setting a new record for the club.",
-      "Hosted a durham leadership conference on effective wealth management. (See photo above)",
-      "Became the first UK under 65 to successfully kayak a grade 7.",
-      "Integer in mauris eu nibh euismod gravida vitae sed neque.",
-      " <a href=\"https://journals.aps.org/pr/abstract/10.1103/PhysRev.82.554.2\">paper</a> "
+      "Became the first UK under 65 to successfully kayak a grade 7 river.",
+      "Wrote a <a href=\"https://journals.aps.org/pr/abstract/10.1103/PhysRev.82.554.2\">paper</a> for a science project in Y7 which ended up winning the 2014 Nobel Prize in Mathematics.",
+      "While I am unable to drive, I am a professional grade 12 drummer.",
+      "Aenean ultricies mi vitae est mauris placerat eleifend leo."
     ]
   },
   {
@@ -90,12 +91,12 @@
     title: "Why You Should Vote for Me",
     image: "/images/image3.jpg",
     points: [
-      "Of the other candidates I am the only clear choice.",
-      "I'm the first candidate in DUCC history to gain the support of 4 proposers rather than the normal 2.",
-      "Tactical Voting: As the current leader in the polls I am the clear choice to vote for it you are worried about any other candidates getting the position.",
+      "I'm the first candidate in DUCC history to gain the support of 4 proposers rather than the normal 2, including an alumnus supporter.",
+      "Current polls put me in the lead just ahead of Nathaniel, with other candidates far behind. These other candidates cannot win; voting for them is a vote for Nathaniel as captain. Credible and well-known tactical voting sites say only a vote for me can stop Nathaniel.",
       "In Greek mythology, Cassandra was a Trojan princess cursed by Apollo to always speak true prophecies that no one would believe. Her name has become a common term for someone whose accurate warnings or predictions are consistently dismissed or ignored.",
-      "Only candidate to have run for canoe club President and won 3 times in a row.",
-      "Aenean ultricies mi vitae est mauris placerat eleifend leo."
+      "I am the only candidate to have run for canoe club President and won 3 times in a row.",
+      "Libertas. Integritas. Humilitas. Satis dictum"
+    ]
     ]
   }
 ];

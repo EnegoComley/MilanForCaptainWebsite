@@ -374,7 +374,9 @@ function App() {
                 Hi! I am a Castle Physics and Astronomy student running for Durham University Canoe Club Captain (DUCCC).
               </p>
               <p>
-                Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. For a while I have thought about whether to seek employment as a Venezuelan government official or as the CEO of Fifa.
+                Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. I have spent thousands of hours (4267 hours - I timed it) thinking about what I can do to improve the world. For a good while I thought that the best way to do so is to seek employment as a Venezuelan government official or as the CEO of Fifa, but then it dawned on me who actually has the power to solve the world's problems: Team Durham. I thus announce I am running for re-election as President of DUCC.
+
+                I have actually run for DUCCC every year in the past few years and won overwhelmingly each time but the radical elitist pro-rower cabal running the club rigged the vote each time to prevent my victory (after all, those who count the vote decide everything), with my investigations uncovering a substantial amount of electoral fraud. Despite this, I will not waver in my fight for you: let's make my victory this year too big to rig!
               </p>
               <p>
                 First Proposer: Enego Comley <br/>
@@ -485,8 +487,8 @@ function App() {
           <div className="footer-inner">
             <div className="footer-brand">
               <p className="footer-copy">Milan For Captain Campaign</p>
-              <p className="footer-subcopy">Durham University Canoe Club • 2026 Campaign</p>
-              <p className="footer-subcopy">© 2026 Milan For Captain. All rights reserved.</p>
+              <p className="footer-subcopy">Durham University Canoe Club ï¿½ 2026 Campaign</p>
+              <p className="footer-subcopy">ï¿½ 2026 Milan For Captain. All rights reserved.</p>
             </div>
             <div className="footer-right">
               <nav className="footer-social" aria-label="Social links">
