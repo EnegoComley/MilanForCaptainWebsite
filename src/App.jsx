@@ -1,4 +1,4 @@
-ï»¿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { campaignSections } from "./data/sectionPoints";
 
 const testimonialLinks = [
@@ -66,6 +66,17 @@ function splitPoint(point, sectionId) {
     body: String(point),
     icon: null
   };
+}
+function shouldRenderHtmlBody(body) {
+  return typeof body === "string" && /<a\s/i.test(body);
+}
+
+function renderPointBody(body) {
+  if (shouldRenderHtmlBody(body)) {
+    return <span dangerouslySetInnerHTML={{ __html: body }} />;
+  }
+
+  return body;
 }
 function ResilientImage({ className, src, alt }) {
   const candidates = withJpegFallback(src);
@@ -395,7 +406,7 @@ function App() {
                           {parsed.icon ? <span className="policy-icon" aria-hidden="true">{parsed.icon}</span> : null}
                         </div>
                         {parsed.heading ? <h3>{parsed.heading}</h3> : null}
-                        <p>{parsed.body}</p>
+                        <p>{renderPointBody(parsed.body)}</p>
                       </article>
                     );
                   })}
@@ -458,7 +469,7 @@ function App() {
                     return (
                       <li key={`big-${section.id}-${index}`}>
                         {parsed.heading ? <strong>{parsed.heading}: </strong> : null}
-                        {parsed.body}
+                        {renderPointBody(parsed.body)}
                       </li>
                     );
                   })}                  </ul>
@@ -474,8 +485,8 @@ function App() {
           <div className="footer-inner">
             <div className="footer-brand">
               <p className="footer-copy">Milan For Captain Campaign</p>
-              <p className="footer-subcopy">Durham University Canoe Club â€¢ 2026 Campaign</p>
-              <p className="footer-subcopy">Â© 2026 Milan For Captain. All rights reserved.</p>
+              <p className="footer-subcopy">Durham University Canoe Club • 2026 Campaign</p>
+              <p className="footer-subcopy">© 2026 Milan For Captain. All rights reserved.</p>
             </div>
             <div className="footer-right">
               <nav className="footer-social" aria-label="Social links">
@@ -498,6 +509,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

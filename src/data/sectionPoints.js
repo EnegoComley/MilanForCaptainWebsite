@@ -81,7 +81,8 @@
       "Completed a 5K time trial in 3 hours last week, setting a new record for the club.",
       "Hosted a durham leadership conference on effective wealth management. (See photo above)",
       "Became the first UK under 65 to successfully kayak a grade 7.",
-      "Integer in mauris eu nibh euismod gravida vitae sed neque."
+      "Integer in mauris eu nibh euismod gravida vitae sed neque.",
+      " <a href=\"https://journals.aps.org/pr/abstract/10.1103/PhysRev.82.554.2\">paper</a> "
     ]
   },
   {
