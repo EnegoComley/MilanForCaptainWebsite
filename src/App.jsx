@@ -39,6 +39,14 @@ const quickJumpItems = [
   { id: "testimonials", label: "Testimonials" }
 ];
 
+const aboutMeCopy = {
+  intro: "Hi! I am a Castle Physics and Astronomy student running for Durham University Canoe Club Captain (DUCCC).",
+  story: "Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. I have spent thousands of hours (4267 hours - I timed it) thinking about what I can do to improve the world. For a good while I thought that the best way to do so is to seek employment as a Venezuelan government official or as the CEO of Fifa, but then it dawned on me who actually has the power to solve the world's problems: Team Durham. I thus announce I am running for re-election as President of DUCC.\n\nI have actually run for DUCCC every year in the past few years and won overwhelmingly each time but the radical elitist pro-rower cabal running the club rigged the vote each time to prevent my victory (after all, those who count the vote decide everything), with my investigations uncovering a substantial amount of electoral fraud. Despite this, I will not waver in my fight for you: let's make my victory this year too big to rig!",
+  proposers: ["Enego Comley", "Charlotte Chow", "Bio Smitasiri", "Noah Coombe"]
+};
+
+const proposerLabels = ["First", "Second", "Third", "Fourth"];
+
 function withJpegFallback(src) {
   if (src.endsWith(".jpg")) {
     return [src, src.replace(/\.jpg$/i, ".jpeg")];
@@ -76,7 +84,7 @@ function renderPointBody(body) {
     return <span dangerouslySetInnerHTML={{ __html: body }} />;
   }
 
-  return body;
+  return <span>{body}</span>;
 }
 function ResilientImage({ className, src, alt }) {
   const candidates = withJpegFallback(src);
@@ -370,19 +378,15 @@ function App() {
             </div>
             <div className="bio-copy">
               <h2>About Me</h2>
+              <p>{aboutMeCopy.intro}</p>
+              <p>{aboutMeCopy.story}</p>
               <p>
-                Hi! I am a Castle Physics and Astronomy student running for Durham University Canoe Club Captain (DUCCC).
-              </p>
-              <p>
-                Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. I have spent thousands of hours (4267 hours - I timed it) thinking about what I can do to improve the world. For a good while I thought that the best way to do so is to seek employment as a Venezuelan government official or as the CEO of Fifa, but then it dawned on me who actually has the power to solve the world's problems: Team Durham. I thus announce I am running for re-election as President of DUCC.
-
-                I have actually run for DUCCC every year in the past few years and won overwhelmingly each time but the radical elitist pro-rower cabal running the club rigged the vote each time to prevent my victory (after all, those who count the vote decide everything), with my investigations uncovering a substantial amount of electoral fraud. Despite this, I will not waver in my fight for you: let's make my victory this year too big to rig!
-              </p>
-              <p>
-                First Proposer: Enego Comley <br/>
-                Second Proposer: Charlotte Chow <br/>
-                Third Proposer: Bio Smitasiri <br/>
-                Fourth Proposer: Noah Coombe
+                {aboutMeCopy.proposers.map((name, index) => (
+                  <React.Fragment key={`${proposerLabels[index]}-${name}`}>
+                    {proposerLabels[index]} Proposer: {name}
+                    {index < aboutMeCopy.proposers.length - 1 ? <br /> : null}
+                  </React.Fragment>
+                ))}
               </p>
             </div>
           </section>
@@ -449,14 +453,15 @@ function App() {
                   src="/images/pfp.jpg"
                   alt="Milan campaign portrait"
                 />
+                <p>{aboutMeCopy.intro}</p>
+                <p>{aboutMeCopy.story}</p>
                 <p>
-                  Hi! I am a Castle Physics and Astronomy student running for Durham University Canoe Club Captain (DUCCC).
-                </p>
-                <p>
-                  Why am I running for DUCCC? To be honest, because it seems like the coolest graduate job. For a while I have thought about whether to seek employment as a Venezuelan government official or as the CEO of Fifa.
-                </p>
-                <p>
-                  First Proposer: Enego Comley. Second Proposer: Charlotte Chow. Third Proposer: Bio Smitasiri. Fourth Proposer: Noah Coombe.
+                  {aboutMeCopy.proposers.map((name, index) => (
+                    <React.Fragment key={`${proposerLabels[index]}-${name}`}>
+                      {proposerLabels[index]} Proposer: {name}
+                      {index < aboutMeCopy.proposers.length - 1 ? <br /> : null}
+                    </React.Fragment>
+                  ))}
                 </p>
               </div>
             </article>
@@ -487,8 +492,8 @@ function App() {
           <div className="footer-inner">
             <div className="footer-brand">
               <p className="footer-copy">Milan For Captain Campaign</p>
-              <p className="footer-subcopy">Durham University Canoe Club � 2026 Campaign</p>
-              <p className="footer-subcopy">� 2026 Milan For Captain. All rights reserved.</p>
+              <p className="footer-subcopy">Durham University Canoe Club {"\u00A9"} 2026 Campaign</p>
+              <p className="footer-subcopy">{"\u00A9"} 2026 Milan For Captain. All rights reserved.</p>
             </div>
             <div className="footer-right">
               <nav className="footer-social" aria-label="Social links">
@@ -511,6 +516,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
